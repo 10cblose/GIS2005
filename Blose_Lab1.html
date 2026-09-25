@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      img {
+        width: 700px;
+        height: 150px;
+      }
+      arcgis-map{
+        width: 800px;
+        height: 400px;
+      }
+    </style>
+
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+    <script type="module" src="https://js.arcgis.com/5.1/"></script>
+
+  </head>
+
+  <body>
+    <P>
+      <img src="https://github.com/10cblose/GIS2005/blob/main/Boulder_Trails_Lab1.jpg?raw=true"/>
+    </P>
+    <arcgis-map item-id="bb8061de760a4b2d809fec6fc623c324" center="-105.24, 40.02" zoom="11">
+    
+      <arcgis-zoom slot="top-left"></arcgis-zoom>
+
+    </arcgis-map>
+  <script type="module">
+      const viewElement = document.querySelector("arcgis-map");
+
+      const locString = window.location;
+      console.log("locString=" + locString);
+      const urlParams = new URLSearchParams(locString.search);
+      let resort = urlParams.get("resort");
+      console.log(resort);
+      if (resort=="winterpark") {
+        viewElement.goTo(
+          // go to point with a custom animation duration
+          { center: [-105.77, 39.88] },
+          { duration: 5000 },
+        );
+        viewElement.zoom = 15;
+      }
+      if (resort=="copper") {
+        viewElement.goTo(
+          // go to point with a custom animation duration
+          { center: [-106.16, 39.48] },
+          { duration: 5000 },
+        );
+        viewElement.zoom = 15;
+      } 
+
+  </script>
+  </body>
+
+</html>
