@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<HTML>
+  <HEAD>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://js.arcgis.com/5.1/"></script>
+</HEAD>
+  <BODY>
+    <div class="container">
+      <header>
+        <img src="skyline.jpeg" style="display: block; margin: 0 auto;" width="700px" height="80px" alt="Skyline"> 
+      </header>
+      <main>
+        <arcgis-map item-id="21c6036da6784de9bdf996c5adfd139c" id="myMap" center="-104.95, 39.75" zoom="14">
+        <arcgis-zoom slot="top-left"></arcgis-zoom>
+        </arcgis-map>
+      </main>
+      <aside class="sidebar-l"> Layer Visibility 
+        <div class="sidebar-l-top"> 
+          <arcgis-layer-list reference-element="myMap"></arcgis-layer-list> 
+        </div> 
+          Legend 
+        <div class="sidebar-l-bottom"> 
+         <arcgis-legend reference-element="myMap"></arcgis-legend> 
+        </div> 
+        </aside>
+      <footer>
+        <p class="attribution-1">Grocery icon from www.flaticon.com licensed by CC 3.0</p>
+        <p class="attribution-2">Skyline image by CovertMan21. "Denver Skyline." Reddit, 2008, https://www.reddit.com/r/Denver/comments/1kb16n9/my_favorite_angle_of_the_denver_skyline/</p>
+      </footer>
+    </div>
+  </BODY>
+</HTML>
